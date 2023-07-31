@@ -1,0 +1,7 @@
+SELECT
+	dane_wypozyczen.id_wypozyczenia,
+	samochody.marka,
+    samochody.model
+FROM dane_wypozyczen
+	INNER JOIN samochody on samochody.id_samochodu=dane_wypozyczen.id_samochodu
+ORDER BY dane_wypozyczen.id_wypozyczenia  
