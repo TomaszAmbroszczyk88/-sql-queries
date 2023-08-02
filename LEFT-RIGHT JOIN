@@ -1,0 +1,8 @@
+#Checking which rentals do not have in the database of the employee who served them
+
+SELECT
+	wypozyczenia.id_wypozyczenia
+FROM pracownicy
+	RIGHT JOIN wypozyczenia ON pracownicy.id_pracownika=wypozyczenia.id_pracownika
+WHERE wypozyczenia.id_pracownika IS NULL;
+	
