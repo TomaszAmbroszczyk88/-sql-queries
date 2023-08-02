@@ -1,3 +1,5 @@
+#Inquiry shows how to obtain information about the rental number, make, model, rental date and customer details.
+
 SELECT
     dane_wypozyczen.id_wypozyczenia,
     samochody.marka,
