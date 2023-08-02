@@ -12,7 +12,7 @@ WHERE wypozyczenia.id_pracownika IS NULL;
 
 SELECT
 	samochody.marka,
-    samochody.model
+	samochody.model
 FROM samochody
 	LEFT JOIN dane_wypozyczen ON samochody.id_samochodu=dane_wypozyczen.id_samochodu
 WHERE dane_wypozyczen.id_samochodu IS NULL
