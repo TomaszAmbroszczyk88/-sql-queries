@@ -1,0 +1,12 @@
+#Labeling prices as expensive, cheap, and mid-priced
+
+
+SELECT
+    model,
+    cena,
+CASE WHEN cena<=2000 THEN 'Tanio'
+	 WHEN cena>=3000 THEN 'Drogo'
+     ELSE 'Średnio'
+END AS cena_produktu
+FROM produkty
+ORDER BY cena_produktu DESC
