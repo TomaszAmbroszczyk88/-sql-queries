@@ -1,5 +1,11 @@
-#check the average price of products
+# checking which products are more expensive than the average price of products
 
 
-SELECT AVG(cena) AS srednia cena
-FROM produkty;
+SELECT
+	id_produktu,
+    model,
+    cena
+FROM prdukty
+WHERE cena>(SELECT AVG(cena) FROM produkty)
+ORDER BY;
+
