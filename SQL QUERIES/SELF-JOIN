@@ -3,6 +3,6 @@
 
 SELECT
 	pracownicy.nazwisko_pracownika,
-    s.nazwisko_pracownika szef
+	s.nazwisko_pracownika szef
 FROM pracownicy p
 	JOIN pracownicy s ON p.szef_id=s.id_pracownika
