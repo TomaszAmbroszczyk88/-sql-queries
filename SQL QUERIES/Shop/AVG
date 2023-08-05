@@ -1,0 +1,5 @@
+#check the average price of products
+
+
+SELECT AVG(cena)
+FROM produkty;
