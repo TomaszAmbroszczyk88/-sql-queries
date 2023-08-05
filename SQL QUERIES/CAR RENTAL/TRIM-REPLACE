@@ -1,1 +1,9 @@
+#remove unnecessary spaces, sorted by number of characters
 
+
+SELECT
+    REPLACE(klienci.imie_klienta,' ','')'imię',
+    TRIM(klienci.nazwisko_klienta) 'nazwisko',
+    klienci.miasto_klienta 'miasto'
+FROM klienci
+ORDER BY char_lenght(klienci.miasto_klienta) DESC
