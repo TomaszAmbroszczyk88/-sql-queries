@@ -2,7 +2,7 @@
 
 
 SELECT
-	  REPLACE(klienci.imie_klienta,' ','')'imię',
+    REPLACE(klienci.imie_klienta,' ','')'imię',
     TRIM(klienci.nazwisko_klienta) 'nazwisko',
     klienci.miasto_klienta 'miasto'
 FROM klienci
