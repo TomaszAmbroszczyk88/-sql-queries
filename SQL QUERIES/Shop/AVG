@@ -1,5 +1,5 @@
 #check the average price of products
 
 
-SELECT AVG(cena)
+SELECT AVG(cena) AS srednia cena
 FROM produkty;
