@@ -2,7 +2,6 @@
 
 
 SELECT
-
 SUM(dane_wypozyczen.cena_doba*dane_wypozyczen.ilosc_dob) wartość,
   klienci.imie_klienta,
   klienci.nazwisko_klienta
