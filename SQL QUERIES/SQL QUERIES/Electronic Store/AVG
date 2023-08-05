@@ -3,8 +3,8 @@
 
 SELECT
 	id_produktu,
-    model,
-    cena
+	model,
+	cena
 FROM prdukty
 WHERE cena>(SELECT AVG(cena) FROM produkty)
 ORDER BY;
