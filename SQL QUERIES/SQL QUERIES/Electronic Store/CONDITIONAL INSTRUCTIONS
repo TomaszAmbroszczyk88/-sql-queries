@@ -1,6 +1,5 @@
 #Labeling prices as expensive, cheap, and mid-priced
 
-
 SELECT
     model,
     cena,
