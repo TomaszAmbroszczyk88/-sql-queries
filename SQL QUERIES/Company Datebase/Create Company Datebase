@@ -1,3 +1,23 @@
+#Oto wyjaśnienie krok po kroku, co zostało zrobione w tym kodzie:
+
+1.Utworzono tabelę employee, która zawiera dane pracowników, takie jak identyfikator pracownika (emp_id), imię, nazwisko, data urodzenia (birth_day), płeć, pensja, identyfikator przełożonego (super_id) oraz identyfikator oddziału (branch_id).
+
+2.Utworzono tabelę branch, która reprezentuje oddziały firmy. Zawiera identyfikator oddziału (branch_id), nazwę oddziału (branch_name), identyfikator kierownika (mgr_id), datę objęcia stanowiska przez kierownika (mgr_start_date). Dodatkowo, dodano klucz obcy mgr_id odnoszący się do tabeli employee, ustawiony z opcją ON DELETE SET NULL, co oznacza, że w przypadku usunięcia kierownika, pole mgr_id w tabeli branch zostanie ustawione na NULL.
+
+3.Użyto polecenia ALTER TABLE, aby dodać dwa klucze obce do tabeli employee. Pierwszy klucz obcy branch_id odnosi się do tabeli branch i jest ustawiony z opcją ON DELETE SET NULL. Drugi klucz obcy super_id odnosi się również do tabeli employee i również jest ustawiony z opcją ON DELETE SET NULL.
+
+4.Utworzono tabelę client, która przechowuje dane o klientach. Zawiera identyfikator klienta (client_id), nazwę klienta (client_name) oraz identyfikator oddziału (branch_id). Klucz obcy branch_id odnosi się do tabeli branch i jest ustawiony z opcją ON DELETE SET NULL.
+
+5.Utworzono tabelę works_with, która reprezentuje relację pracowników i klientów, wraz z informacjami o ich współpracy. Zawiera identyfikatory pracownika (emp_id) i klienta (client_id), oraz pole total_sales reprezentujące łączną wartość sprzedaży. Klucze obce emp_id i client_id odnoszą się do tabel employee i client odpowiednio, z opcją ON DELETE CASCADE, co oznacza, że w przypadku usunięcia pracownika lub klienta, odpowiednie rekordy w tabeli works_with również zostaną usunięte.
+
+6.Utworzono tabelę branch_supplier, która przechowuje dane o dostawcach dla oddziałów firmy. Zawiera identyfikator oddziału (branch_id), nazwę dostawcy (supplier_name) oraz typ dostaw (supply_type). Klucz obcy branch_id odnosi się do tabeli branch i jest ustawiony z opcją ON DELETE CASCADE.
+
+7.Wprowadzono przykładowe dane dla różnych pracowników, oddziałów, dostawców i klientów, korzystając z poleceń INSERT INTO.
+
+8.Przeprowadzono aktualizacje w tabeli employee w celu przypisania odpowiednich oddziałów pracownikom.
+
+------------------------------------------------------------------------------------------------------------------------------
+
 CREATE TABLE employee (
   emp_id INT PRIMARY KEY,
   first_name VARCHAR(40),
