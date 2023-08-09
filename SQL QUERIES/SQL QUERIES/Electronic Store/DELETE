@@ -1,5 +1,4 @@
 #Deleting a record
 
-
 DELETE FROM  produkty
 WHERE id_produktu IN (19,20,21)
