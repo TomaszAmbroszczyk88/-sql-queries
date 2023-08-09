@@ -1,26 +1,26 @@
-# Find the number of employees/Znajdź liczbę pracowników
+# Znajdź liczbę pracowników
 SELECT COUNT(super_id)
 FROM employee;
 
-# Find the average of all employee's salaries/Znajdź średnią wynagrodzeń wszystkich pracowników
+# Znajdź średnią wynagrodzeń wszystkich pracowników
 SELECT AVG(salary)
 FROM employee;
 
-# Find the sum of all employee's salaries/Znajdź sumę wynagrodzeń wszystkich pracowników
+# Znajdź sumę wynagrodzeń wszystkich pracowników
 SELECT SUM(salary)
 FROM employee;
 
-# Find out how many males and females there are/Dowiedz się, ile jest mężczyzn i kobiet
+# Dowiedz się, ile jest mężczyzn i kobiet
 SELECT COUNT(sex), sex
 FROM employee
 GROUP BY sex
 
-# Find the total sales of each salesman/Znajdź całkowitą sprzedaż każdego sprzedawcy
+# Znajdź całkowitą sprzedaż każdego sprzedawcy
 SELECT SUM(total_sales), emp_id
 FROM works_with
 GROUP BY client_id;
 
-# Find the total amount of money spent by each client/Znajdź całkowitą kwotę pieniędzy wydaną przez każdego klienta
+# Znajdź całkowitą kwotę pieniędzy wydaną przez każdego klienta
 SELECT SUM(total_sales), client_id
 FROM works_with
 GROUP BY client_id;
