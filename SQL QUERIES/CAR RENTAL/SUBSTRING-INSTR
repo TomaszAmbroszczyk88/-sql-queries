@@ -1,5 +1,4 @@
-# FIND CUSTOMER EMAIL DOMAINS, LIMIT REPEATED RECORDS TO 1
-
+# Find customer emaildomains, limit repeated records to 1 type
 
 SELECT DISTINCT
 	SUBSTRING(klienci.email_klienta, instr(klienci.email_klienta, '@' )+1) 'DOMENA'
