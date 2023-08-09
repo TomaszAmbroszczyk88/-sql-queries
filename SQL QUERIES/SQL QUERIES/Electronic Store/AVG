@@ -1,6 +1,5 @@
 # checking which products are more expensive than the average price of products
 
-
 SELECT
 	id_produktu,
 	model,
