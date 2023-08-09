@@ -1,0 +1,49 @@
+#Znajdź nazwiska wszystkich pracowników, którzy sprzedali ponad 50
+
+SELECT employee.first_name, employee.last_name
+FROM employee
+WHERE employee.emp_id IN (SELECT works_with.emp_id
+                          FROM works_with
+                          WHERE works_with.total_sales > 50000);
+
+#Znajdź wszystkich klientów obsługiwanych przez oddział, którym zarządza Michael Scott
+
+SELECT client.client_id, client.client_name
+FROM client
+WHERE client.branch_id = (SELECT branch.branch_id
+                          FROM branch
+                          WHERE branch.mgr_id = 102);
+
+#Znajdź wszystkich klientów obsługiwanych przez oddział, którym zarządza Michael Scott
+ 
+ SELECT client.client_id, client.client_name
+ FROM client
+ WHERE client.branch_id = (SELECT branch.branch_id
+                           FROM branch
+                           WHERE branch.mgr_id = (SELECT employee.emp_id
+                                                  FROM employee
+                                                  WHERE employee.first_name = 'Michael' AND employee.last_name ='Scott'
+                                                  LIMIT 1));
+
+
+#Znajdź nazwiska pracowników, którzy pracują z klientami obsługiwanymi przez oddział scranton
+
+SELECT employee.first_name, employee.last_name
+FROM employee
+WHERE employee.emp_id IN (
+                         SELECT works_with.emp_id
+                         FROM works_with
+                         )
+AND employee.branch_id = 2;
+
+#Znajdź nazwiska wszystkich klientów, którzy wydali ponad 100 000 dolarów
+
+SELECT client.client_name
+FROM client
+WHERE client.client_id IN (
+                          SELECT client_id
+                          FROM (
+                                SELECT SUM(works_with.total_sales) AS totals, client_id
+                                FROM works_with
+                                GROUP BY client_id) AS total_client_sales
+                          WHERE totals > 100000
