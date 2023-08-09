@@ -1,6 +1,5 @@
 #remove unnecessary spaces, sorted by number of characters
 
-
 SELECT
     REPLACE(klienci.imie_klienta,' ','')'imię',
     TRIM(klienci.nazwisko_klienta) 'nazwisko',
