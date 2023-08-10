@@ -1,4 +1,4 @@
-#Znajdź nazwiska wszystkich pracowników, którzy sprzedali ponad 50
+#Znajdź nazwiska wszystkich pracowników, którzy sprzedali za ponad 50k
 
 SELECT employee.first_name, employee.last_name
 FROM employee
