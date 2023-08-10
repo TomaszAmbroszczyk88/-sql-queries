@@ -1,5 +1,5 @@
 # Znajdź liczbę pracowników
-SELECT COUNT(super_id)
+SELECT COUNT(employee_id)
 FROM employee;
 
 # Znajdź średnią wynagrodzeń wszystkich pracowników
