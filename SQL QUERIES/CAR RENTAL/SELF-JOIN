@@ -1,6 +1,5 @@
 #query to check who is whose boss
 
-
 SELECT
 	pracownicy.nazwisko_pracownika,
 	s.nazwisko_pracownika szef
