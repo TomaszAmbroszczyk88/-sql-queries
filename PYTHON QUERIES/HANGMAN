@@ -1,0 +1,31 @@
+for _ in word :
+    user_word.append("_")
+
+
+while True:
+    letter = input("Podaj litere: ")
+    used_letters.append(letter)
+
+    found_indexes = find_indexes(word, letter)
+
+    if len(found_indexes) == 0:
+
+        print("nie ma takiej litery")
+        no_of_tries -= 1
+        print("pozostalo_prob:", no_of_tries)
+
+
+        if no_of_tries == 0:
+            print("koniec gry")
+            sys.exit(0)
+    else:
+        for index in found_indexes:
+            user_word[index] = letter
+        print(user_word)   
+        
+        if("".join(user_word)) == word:
+            print("Brawo wygrałeś, koniec gry")
+            sys.exit(0)
+        
+           
+    print("użyte litery :", used_letters)
