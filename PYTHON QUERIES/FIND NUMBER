@@ -1,0 +1,16 @@
+from random import randint
+
+los = randint(1,10)
+odp = 18
+i = 0
+print("Zgadnij liczbe od 1 do 10")
+
+while odp != los:
+    i += 1
+    odp = int(input("Podaj liczbe : "))
+    if odp > los:
+        print("Niestety liczba jest mniejsza od Twojej")
+    elif odp < los:
+        print("Niestety liczba jest wieksza od Twojej")
+    else:
+        print ("Gratulacje zgadłes za", i, "razem.")
