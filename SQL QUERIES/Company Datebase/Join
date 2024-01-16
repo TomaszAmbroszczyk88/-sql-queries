@@ -1,6 +1,14 @@
-# znajdz wszystkie oddzialy i ich menagerów
+# Znajdz wszystkie oddzialy i ich menagerów
 Select employee.emp_id, employee.first_name, branch.branch_name
 FROM employee
 JOIN/LEFT JOIN/RIGHT JOIN branch
 on employee.emp_id = branch.mgr_id
+
+# Znajdz imiona i nazwiska wszystkich pracowników ktorzy sprzedali towaru za ponad 30K
+SELECT employee.first_name, employee.last_name
+FROM employee
+WHERE emp_id in(
+	Select emp_id
+	FROM works_with
+	WHERE total_sales > '30000')
 
