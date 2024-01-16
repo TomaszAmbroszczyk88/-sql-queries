@@ -1,4 +1,4 @@
---znajdz wszystkie oddzialy i ich menagerów
+# znajdz wszystkie oddzialy i ich menagerów
 Select employee.emp_id, employee.first_name, branch.branch_name
 FROM employee
 JOIN branch
