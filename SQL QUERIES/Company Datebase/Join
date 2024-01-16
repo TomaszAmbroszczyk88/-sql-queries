@@ -1,6 +1,6 @@
 # znajdz wszystkie oddzialy i ich menagerów
 Select employee.emp_id, employee.first_name, branch.branch_name
 FROM employee
-JOIN branch
+JOIN/LEFT JOIN/RIGHT JOIN branch
 on employee.emp_id = branch.mgr_id
 
