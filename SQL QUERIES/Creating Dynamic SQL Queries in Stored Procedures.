@@ -13,7 +13,7 @@ VALUES
     (4, 'Coffee Table', 'Furniture', 300.00),
     (5, 'Running Shoes', 'Sports', 80.00
 
-###
+---------
 
 
 CREATE PROCEDURE GetFilteredProducts
