@@ -27,3 +27,14 @@ BEGIN
 
     EXEC sp_executesql @SQLQuery, N'@FilterValue NVARCHAR(100)', @FilterValue
 END
+
+-------
+
+
+EXEC GetFilteredProducts @FilterColumn = 'Category', @FilterValue = 'Electronics'
+
+
+-------
+
+
+
