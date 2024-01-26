@@ -10,3 +10,14 @@ WITH FurnitureCTE AS (
     WHERE
         Category = 'Furniture'
 )
+
+-- Wyświetlenie produktów z kategorii "Furniture" w porządku malejącym cen
+SELECT
+    ProductID,
+    ProductName,
+    Category,
+    Price
+FROM
+    FurnitureCTE
+ORDER BY
+    Price DESC;
