@@ -16,3 +16,18 @@ VALUES
 ---------
 
 
+CREATE PROCEDURE GetFilteredProducts
+    @FilterColumn NVARCHAR(50),
+    @FilterValue NVARCHAR(100)
+AS
+BEGIN
+    DECLARE @SQLQuery NVARCHAR(MAX)
+
+    SET @SQLQuery = 'SELECT * FROM Products WHERE ' + QUOTENAME(@FilterColumn) + ' = @FilterValue'
+
+    EXEC sp_executesql @SQLQuery, N'@FilterValue NVARCHAR(100)', @FilterValue
+END
+
+-------
+
+
