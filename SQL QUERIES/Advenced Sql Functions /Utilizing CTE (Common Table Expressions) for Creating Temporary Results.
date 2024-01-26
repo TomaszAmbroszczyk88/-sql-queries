@@ -1,0 +1,23 @@
+-- Wykorzystanie CTE do utworzenia tymczasowego zestawu wyników
+WITH FurnitureCTE AS (
+    SELECT
+        ProductID,
+        ProductName,
+        Category,
+        Price
+    FROM
+        Products
+    WHERE
+        Category = 'Furniture'
+)
+
+-- Wyświetlenie produktów z kategorii "Furniture" w porządku malejącym cen
+SELECT
+    ProductID,
+    ProductName,
+    Category,
+    Price
+FROM
+    FurnitureCTE
+ORDER BY
+    Price DESC;
