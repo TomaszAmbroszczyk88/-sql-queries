@@ -1,0 +1,12 @@
+-- Wykorzystanie CTE do utworzenia tymczasowego zestawu wyników
+WITH FurnitureCTE AS (
+    SELECT
+        ProductID,
+        ProductName,
+        Category,
+        Price
+    FROM
+        Products
+    WHERE
+        Category = 'Furniture'
+)
