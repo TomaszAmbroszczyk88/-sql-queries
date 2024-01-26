@@ -31,3 +31,9 @@ END
 -------
 
 
+EXEC GetFilteredProducts @FilterColumn = 'Category', @FilterValue = 'Electronics'
+
+
+-------
+
+
