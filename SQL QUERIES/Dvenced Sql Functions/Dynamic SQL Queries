@@ -1,0 +1,43 @@
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName NVARCHAR(100),
+    Category NVARCHAR(50),
+    Price DECIMAL(10, 2)
+);
+
+INSERT INTO Products (ProductID, ProductName, Category, Price)
+VALUES
+    (1, 'Laptop', 'Electronics', 1200.00),
+    (2, 'Smartphone', 'Electronics', 500.00),
+    (3, 'Desk Chair', 'Furniture', 150.00),
+    (4, 'Coffee Table', 'Furniture', 300.00),
+    (5, 'Running Shoes', 'Sports', 80.00
+
+---------
+
+
+CREATE PROCEDURE GetFilteredProducts
+    @FilterColumn NVARCHAR(50),
+    @FilterValue NVARCHAR(100)
+AS
+BEGIN
+    DECLARE @SQLQuery NVARCHAR(MAX)
+
+    SET @SQLQuery = 'SELECT * FROM Products WHERE ' + QUOTENAME(@FilterColumn) + ' = @FilterValue'
+
+    EXEC sp_executesql @SQLQuery, N'@FilterValue NVARCHAR(100)', @FilterValue
+END
+
+-------
+
+
+EXEC GetFilteredProducts @FilterColumn = 'Category', @FilterValue = 'Electronics'
+
+
+-------
+
+
+EXEC GetFilteredProducts @FilterColumn = 'Price', @FilterValue = '200.00'
+
+
+------
