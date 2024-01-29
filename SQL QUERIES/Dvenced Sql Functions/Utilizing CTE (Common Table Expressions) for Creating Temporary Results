@@ -21,3 +21,4 @@ FROM
     FurnitureCTE
 ORDER BY
     Price DESC;
+ 
