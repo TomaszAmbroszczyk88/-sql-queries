@@ -39,5 +39,3 @@ EXEC GetFilteredProducts @FilterColumn = 'Category', @FilterValue = 'Electronics
 
 EXEC GetFilteredProducts @FilterColumn = 'Price', @FilterValue = '200.00'
 
-
-------
