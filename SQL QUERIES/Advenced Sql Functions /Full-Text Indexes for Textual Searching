@@ -25,4 +25,3 @@ UPDATE Products SET Price = 1300.00 WHERE ProductName = 'Laptop';
 --
 
 DELETE FROM Products WHERE Price < 100.00;
-
