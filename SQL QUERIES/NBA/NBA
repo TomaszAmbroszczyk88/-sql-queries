@@ -6,3 +6,26 @@ import seaborn as sns
 import plotly.express as px
 
 pip install kaleido
+
+# sqlite3.connect() Creates a connection object
+# database is the variable we established above
+conn = sqlite3.connect(database)
+
+#pd.read_sql() is a retrieve function that retrieves what we put in the parenthesis
+
+#After SELECT, put what you want to see. In this case we put *, which means see everything
+
+#After FROM choose a source
+    # sqlite_master is an internal table that is present in all SQLite databases. The content of this table describes the database's schema.
+    
+#After WHERE specify a condiction
+    # condition here is where type = table
+    
+#End with a ";" and close the quotation marks
+
+# conn is our connection object
+
+tables = pd.read_sql("""SELECT *
+                        FROM sqlite_master
+                        WHERE type='table';""", conn)
+tables
